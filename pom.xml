@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.kohlschutter.animalsniffer</groupId>
+    <artifactId>signatures</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>com.kohlschutter</groupId>
+        <artifactId>kohlschutter-parent</artifactId>
+        <version>1.5.9-SNAPSHOT</version>
+        <relativePath>../kohlschutter-parent/pom.xml</relativePath>
+    </parent>
+    <name>animalsniffer signatures</name>
+    <inceptionYear>2023</inceptionYear>
+    <description>Animal Sniffer Signatures</description>
+    <url>https://kohlschutter.github.io/</url>
+    <organization>
+        <name>Kohlschütter Search Intelligence</name>
+        <url>https://www.kohlschutter.com/</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Christian Kohlschütter</name>
+            <email>christian@kohlschutter.com</email>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/kohlschutter/animalsniffer-signatures</url>
+        <connection>scm:git:git@github.com:kohlschutter/animalsniffer-signatures.git</connection>
+        <developerConnection>scm:git:git@github.com:kohlschutter/animalsniffer-signatures.git</developerConnection>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <site>
+            <id>github.com/kohlschutter/animalsniffer-signatures</id>
+            <url>gitsite:git@github.com/kohlschutter/animalsniffer-signatures.git</url>
+        </site>
+    </distributionManagement>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/kohlschutter/animalsniffer-signatures/issues</url>
+    </issueManagement>
+    <properties>
+        <kohlschutter.project.base.directory>${project.basedir}</kohlschutter.project.base.directory>
+        <kohlschutter.project.notice.file>${kohlschutter.project.base.directory}/NOTICE</kohlschutter.project.notice.file>
+    </properties>
+    
+    <modules>
+        <module>signatures-java-7</module>
+    </modules>
+    
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>animal-sniffer-maven-plugin</artifactId>
+                    <version>1.23</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

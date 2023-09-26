@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.kohlschutter.animalsniffer</groupId>
+    <artifactId>signatures-java-7</artifactId>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>com.kohlschutter.animalsniffer</groupId>
+        <artifactId>signatures</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <name>signatures-java-7</name>
+    <inceptionYear>2023</inceptionYear>
+    <description>Animal Sniffer Signatures for Java 1.7</description>
+    
+    <properties>
+        <kohlschutter.project.base.directory>${project.parent.basedir}</kohlschutter.project.base.directory>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        
+        <java7.home>/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home</java7.home>
+    </properties>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>animal-sniffer-maven-plugin</artifactId>
+                <version>1.23</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <javaHomeClassPath>
+                        <file>${java7.home}/jre/lib/rt.jar</file>
+                        <file>${java7.home}/jre/lib/jsse.jar</file>
+                        <file>${java7.home}/jre/lib/jce.jar</file>
+                        <file>${java7.home}/jre/lib/alt-rt.jar</file>
+                    </javaHomeClassPath>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
